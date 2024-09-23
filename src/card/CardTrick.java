@@ -96,13 +96,13 @@ public class CardTrick {
         for (Card card : magicHand) {
 
             if (card.getValue() == luckyCard.getValue() && card.getSuit() == luckyCard.getSuit() ) {
-                found = true;
+                lucky = true;
                 break;
             }
         }
 
         // Report the result
-        if (found) {
+        if (lucky) {
             System.out.println("You are lucky, Congradulations on your win!!!");
         } else {
             System.out.println("Your are not a winner, sorry.");
