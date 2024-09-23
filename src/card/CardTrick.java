@@ -83,9 +83,31 @@ public class CardTrick {
         if (found) {
             System.out.println("Your card (" + userCard.getValue() + " of " + userCard.getSuit() + ") is in the magic hand!");
         } else {
-            System.out.println("Your card is not in the magic hand.");
+            System.out.println("Your card (" + userCard.getValue() + " of " + userCard.getSuit() + ") is not in the magic hand.");
         }
 
+        // Add a hardcoded Lucky Card (Ace of Hearts)
+        Card luckyCard = new Card();
+        luckyCard.setValue(1);
+        luckyCard.setSuit(Card.SUITS[0]);
+
+        // Search for the users card in the magic hand
+        boolean lucky = false;
+        for (Card card : magicHand) {
+
+            if (card.getValue() == luckyCard.getValue() && card.getSuit() == luckyCard.getSuit() ) {
+                found = true;
+                break;
+            }
+        }
+
+        // Report the result
+        if (found) {
+            System.out.println("You are lucky, Congradulations on your win!!!");
+        } else {
+            System.out.println("Your are not a winner, sorry.");
+        }
+        
         //insert code to ask the user for Card value and suit, create their card
         // and search magicHand here
         //Then report the result here
