@@ -18,22 +18,26 @@ public class CardTrick {
 
     public static void main(String[] args) {
         Card[] magicHand = new Card[7];
-        
+
         // Create a Random object to generate random numbers
         Random rand = new Random();
 
         for (int i = 0; i < magicHand.length; i++) {
             Card c = new Card();
-            
+
             // Generate a random suit index between 0 and 3
             int suitIndex = rand.nextInt(Card.SUITS.length);
             c.setSuit(Card.SUITS[suitIndex]);
-            
+
             // Generate a random value between 1 and 13
             int value = rand.nextInt(13) + 1;
             c.setValue(value);
-            
+
             magicHand[i] = c;
+        }
+
+        for (Card card : magicHand) {
+            System.out.println(card.getValue() + " of " + card.getSuit());
         }
 
         //insert code to ask the user for Card value and suit, create their card
